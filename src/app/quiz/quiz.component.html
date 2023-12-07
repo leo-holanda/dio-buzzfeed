@@ -1,16 +1,23 @@
-<h1>{{ quiz.title }}</h1>
+<div class="flex flex-col">
+  <h1 class="text-center text-xl mt-8 font-bold">{{ quiz.title }}</h1>
 
-<div *ngIf="!isQuizOver; else outcome">
-  <h2>{{ quiz.questions[questionIndex].statement }}</h2>
-  <button
-    (click)="onAnswerClick(answer)"
-    *ngFor="let answer of quiz.questions[questionIndex].answers">
-    {{ answer.text }}
-  </button>
+  <div
+    class="container mx-auto flex flex-col gap-4 mt-8"
+    *ngIf="!isQuizOver; else outcome">
+    <h2 class="text-center">{{ quiz.questions[questionIndex].statement }}</h2>
+    <button
+      class="btn"
+      (click)="onAnswerClick(answer)"
+      *ngFor="let answer of quiz.questions[questionIndex].answers">
+      {{ answer.text }}
+    </button>
+  </div>
+
+  <ng-template #outcome>
+    <div class="container mx-auto flex flex-col items-center gap-4">
+      <span class="text-center text-8xl font-bold m-8">{{ finalOutcome }}</span>
+      <button class="btn w-1/3">Try a new one!</button>
+      <button class="btn w-1/3">Share with your friends!</button>
+    </div>
+  </ng-template>
 </div>
-
-<ng-template #outcome>
-  <span>{{ finalOutcome }}</span>
-  <button>Try a new one!</button>
-  <button>Share with your friends!</button>
-</ng-template>
