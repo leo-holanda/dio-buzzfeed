@@ -18,6 +18,32 @@ export const quizzes: Quiz[] = [
           },
         ],
       },
+      {
+        statement: 'Do you take time to define your set pieces?',
+        answers: [
+          {
+            text: 'Yes',
+            outcome: 'Yes',
+          },
+          {
+            text: 'No',
+            outcome: 'No',
+          },
+        ],
+      },
+      {
+        statement: 'Do you manage your players morale?',
+        answers: [
+          {
+            text: 'Yes',
+            outcome: 'Yes',
+          },
+          {
+            text: 'No',
+            outcome: 'No',
+          },
+        ],
+      },
     ],
     profiling: answers => {
       const answersMap = new Map<string, number>();
@@ -27,10 +53,12 @@ export const quizzes: Quiz[] = [
       });
 
       let mostFrequentAnswer: string = 'No';
-      const mostFrequentAnswerFrequency = 0;
+      let mostFrequentAnswerFrequency = 0;
       for (const entry of answersMap) {
-        if (entry[1] > mostFrequentAnswerFrequency)
+        if (entry[1] > mostFrequentAnswerFrequency) {
+          mostFrequentAnswerFrequency = entry[1];
           mostFrequentAnswer = entry[0];
+        }
       }
 
       return mostFrequentAnswer;
@@ -53,6 +81,45 @@ export const quizzes: Quiz[] = [
           },
         ],
       },
+      {
+        statement: 'Do you respect the rules while racing?',
+        answers: [
+          {
+            text: 'Yes',
+            outcome: 'Yes',
+          },
+          {
+            text: 'No',
+            outcome: 'No',
+          },
+        ],
+      },
+      {
+        statement: 'Do you know how to manage your tyres and fuel?',
+        answers: [
+          {
+            text: 'Yes',
+            outcome: 'Yes',
+          },
+          {
+            text: 'No',
+            outcome: 'No',
+          },
+        ],
+      },
+      {
+        statement: 'Where does the phrase "Slow in, fast out" applies?',
+        answers: [
+          {
+            text: 'Corner',
+            outcome: 'Yes',
+          },
+          {
+            text: 'Pits',
+            outcome: 'No',
+          },
+        ],
+      },
     ],
     profiling: answers => {
       const answersMap = new Map<string, number>();
@@ -62,10 +129,12 @@ export const quizzes: Quiz[] = [
       });
 
       let mostFrequentAnswer: string = 'No';
-      const mostFrequentAnswerFrequency = 0;
+      let mostFrequentAnswerFrequency = 0;
       for (const entry of answersMap) {
-        if (entry[1] > mostFrequentAnswerFrequency)
+        if (entry[1] > mostFrequentAnswerFrequency) {
+          mostFrequentAnswerFrequency = entry[1];
           mostFrequentAnswer = entry[0];
+        }
       }
 
       return mostFrequentAnswer;
