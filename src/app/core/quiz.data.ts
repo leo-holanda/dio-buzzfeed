@@ -23,10 +23,7 @@ export const quizzes: Quiz[] = [
       const answersMap = new Map<string, number>();
 
       answers.forEach(answer => {
-        answersMap.set(
-          answer.outcome,
-          (answersMap.get(answer.outcome) || 0) + 1
-        );
+        answersMap.set(answer, (answersMap.get(answer) || 0) + 1);
       });
 
       let mostFrequentAnswer: string = 'No';
@@ -61,10 +58,7 @@ export const quizzes: Quiz[] = [
       const answersMap = new Map<string, number>();
 
       answers.forEach(answer => {
-        answersMap.set(
-          answer.outcome,
-          (answersMap.get(answer.outcome) || 0) + 1
-        );
+        answersMap.set(answer, (answersMap.get(answer) || 0) + 1);
       });
 
       let mostFrequentAnswer: string = 'No';

@@ -12,5 +12,5 @@ export type Quiz = {
   title: string;
   questions: Question[];
   outcomes: string[];
-  profiling: (answers: Answer[]) => string;
+  profiling: (answers: string[]) => string;
 };

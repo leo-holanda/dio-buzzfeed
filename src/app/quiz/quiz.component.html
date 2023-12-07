@@ -1,1 +1,10 @@
-<p>quiz works!</p>
+<h1>{{ quiz.title }}</h1>
+
+<div>
+  <h2>{{ quiz.questions[questionIndex].statement }}</h2>
+  <button
+    (click)="onAnswerClick(answer)"
+    *ngFor="let answer of quiz.questions[questionIndex].answers">
+    {{ answer.text }}
+  </button>
+</div>
