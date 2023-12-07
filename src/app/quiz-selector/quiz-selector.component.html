@@ -1,10 +1,8 @@
-<div class="flex flex-col items-center h-full bg-black">
-  <div
-    class="bg-white m-8 rounded hover:bg-gray-500 hover:cursor-pointer"
-    [routerLink]="['quiz', i]"
-    *ngFor="let item of quizzes; let i = index">
-    <span class="text-black p-8 text-xl hover:text-white">{{
-      item.title
-    }}</span>
-  </div>
+<h2 class="text-center mt-8 text-2xl">Choose one!</h2>
+<div class="flex justify-center items-center mt-4">
+  <ul class="menu menu-lg bg-base-200 w-1/2 rounded-box gap-4">
+    <li [routerLink]="['quiz', i]" *ngFor="let item of quizzes; let i = index">
+      <a>{{ item.title }}</a>
+    </li>
+  </ul>
 </div>
