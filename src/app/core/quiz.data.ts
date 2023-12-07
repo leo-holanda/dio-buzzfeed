@@ -45,7 +45,7 @@ export const quizzes: Quiz[] = [
         answers: [
           {
             text: 'Yes',
-            outcome: 'No',
+            outcome: 'Yes',
           },
           {
             text: 'No',
