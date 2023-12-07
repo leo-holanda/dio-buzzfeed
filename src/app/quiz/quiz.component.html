@@ -1,6 +1,6 @@
 <h1>{{ quiz.title }}</h1>
 
-<div>
+<div *ngIf="!isQuizOver; else outcome">
   <h2>{{ quiz.questions[questionIndex].statement }}</h2>
   <button
     (click)="onAnswerClick(answer)"
@@ -8,3 +8,9 @@
     {{ answer.text }}
   </button>
 </div>
+
+<ng-template #outcome>
+  <span>{{ finalOutcome }}</span>
+  <button>Try a new one!</button>
+  <button>Share with your friends!</button>
+</ng-template>

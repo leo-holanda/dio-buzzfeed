@@ -15,6 +15,8 @@ export class QuizComponent implements OnInit {
   quiz!: Quiz;
   questionIndex: number = 0;
   outcomes: string[] = [];
+  isQuizOver = false;
+  finalOutcome!: string;
 
   constructor(
     private quizService: QuizService,
@@ -33,10 +35,11 @@ export class QuizComponent implements OnInit {
   }
 
   private hasAnsweredFinalQuestion(): boolean {
-    return this.questionIndex == this.quiz.questions.length - 1;
+    this.isQuizOver = this.questionIndex == this.quiz.questions.length - 1;
+    return this.isQuizOver;
   }
 
   private showOutcome(): void {
-    console.log(this.quiz.profiling(this.outcomes));
+    this.finalOutcome = this.quiz.profiling(this.outcomes);
   }
 }
