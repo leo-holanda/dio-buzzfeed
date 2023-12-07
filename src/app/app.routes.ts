@@ -4,5 +4,5 @@ import { QuizComponent } from './quiz/quiz.component';
 
 export const routes: Routes = [
   { path: '', component: QuizSelectorComponent },
-  { path: 'quiz', component: QuizComponent },
+  { path: 'quiz/:id', component: QuizComponent },
 ];
