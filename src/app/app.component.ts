@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'bfd-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
