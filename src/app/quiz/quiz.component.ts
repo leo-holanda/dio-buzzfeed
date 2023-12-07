@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../core/quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Answer, Quiz } from './quiz.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'bfd-quiz',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
